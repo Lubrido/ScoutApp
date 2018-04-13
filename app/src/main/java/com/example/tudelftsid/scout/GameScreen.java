@@ -11,6 +11,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -52,8 +53,6 @@ public class GameScreen extends AppCompatActivity {
 
         setDestination();
 
-        calculateMeters();
-
         hintButton();
     }
 
@@ -62,6 +61,8 @@ public class GameScreen extends AppCompatActivity {
             public void onLocationChanged(Location location) {
                 gpsLongitude = location.getLongitude();
                 gpsLatitude = location.getLatitude();
+                Log.i("locationlat","the lat is" + gpsLatitude);
+                Log.i("locationlong","the long is" + gpsLongitude);
             }
 
             @Override
@@ -80,9 +81,8 @@ public class GameScreen extends AppCompatActivity {
         };
 
     void setDestination(){
-        //chosen photo ID form last screen
-        //destinationLongitude = databaseDestinationLongitude;
-        //destinationLatitude = databaseDestinationLatitude;
+        destinationLongitude = 4.376026 ;
+        destinationLatitude = 52.003327;
     }
 
     void calculateMeters(){
@@ -94,14 +94,15 @@ public class GameScreen extends AppCompatActivity {
                         Math.sin(dLon/2) * Math.sin(dLon/2);
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
         double d = R * c;
-        //distanceMeters = d * 1000;
-        distanceMeters=15;
+        distanceMeters = d * 1000;
+        Log.i("distanceMeters","the distance is" + distanceMeters);
     }
 
     void hintButton(){
         useHintButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 temperature.setVisibility(View.VISIBLE);
+                calculateMeters();
                 if(distanceMeters >4000){
                     temperature.setText("You froze");
                 }
@@ -127,7 +128,7 @@ public class GameScreen extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode){
-            case 10:
+            case 1:
                 hintButton();
                 break;
             default:
