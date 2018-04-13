@@ -3,4 +3,6 @@
     <string name="thermometer">thermometer</string>
     <string name="useHint">Use Hint</string>
     <string name="temp">Temp</string>
+    <string name="background">Background</string>
+    <string name="logo">Logo</string>
 </resources>

@@ -29,6 +29,8 @@ public class GameScreen extends AppCompatActivity {
     private double gpsLongitude;
     private double gpsLatitude;
     private double distanceMeters;
+    private double temp;
+    private boolean check;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,8 @@ public class GameScreen extends AppCompatActivity {
         calculateMeters();
 
         hintButton();
+
+        //checkEnd();
     }
 
    LocationListener locationListenerGPS= new LocationListener() {
@@ -81,35 +85,9 @@ public class GameScreen extends AppCompatActivity {
         };
 
     void setDestination(){
-        private Map<Double, Double> getLocation(){
-            HttpRequest request = new HttpRequest();
-
-        }
         //chosen photo ID form last screen
         //destinationLongitude = databaseDestinationLongitude;
         //destinationLatitude = databaseDestinationLatitude;
-    }
-
-    void hintButton(){
-        useHintButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                temperature.setVisibility(View.VISIBLE);
-                if(distanceMeters >4000){
-                    temperature.setText("You froze");
-                }
-                else {
-                    double a = (-1D / 80);
-                    double temp = a * distanceMeters + 30;
-                    temperature.setText(String.format("%.1f °C",temp));
-                    int progressTemp = (int)temp + 20;
-                    int progressScale=0;
-                    while (progressScale < progressTemp){
-                        progressScale++;
-                        progress.setProgress(progressScale);
-                    }
-                }
-            }
-        });
     }
 
     void calculateMeters(){
@@ -124,6 +102,41 @@ public class GameScreen extends AppCompatActivity {
         //distanceMeters = d * 1000;
         distanceMeters=215;
     }
+
+    void hintButton(){
+        useHintButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                temperature.setVisibility(View.VISIBLE);
+                if(distanceMeters >4000){
+                    temperature.setText("You froze");
+                }
+                else {
+                    double a = (-1D / 80);
+                    temp = a * distanceMeters + 30;
+                    temperature.setText(String.format("%.1f °C",temp));
+                    int progressTemp = (int)temp + 20;
+                    int progressScale=0;
+                    while (progressScale < progressTemp){
+                        progressScale++;
+                        progress.setProgress(progressScale);
+                    }
+                }
+            }
+        });
+    }
+
+    /*void checkEnd(){
+        if(temp>29.6) {
+            check = true;
+        } else {
+            check = false;
+        }
+
+        if(check==true){
+            Intent myIntent = new Intent(this,CompleteScreen.class);
+            startActivity(myIntent);
+        }
+    }*/
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
