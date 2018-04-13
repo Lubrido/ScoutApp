@@ -16,8 +16,6 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import java.util.Map;
-
 public class GameScreen extends AppCompatActivity {
 
     private Button useHintButton;
@@ -30,7 +28,6 @@ public class GameScreen extends AppCompatActivity {
     private double gpsLatitude;
     private double distanceMeters;
     private double temp;
-    private boolean check;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +55,6 @@ public class GameScreen extends AppCompatActivity {
         calculateMeters();
 
         hintButton();
-
-        //checkEnd();
     }
 
    LocationListener locationListenerGPS= new LocationListener() {
@@ -100,7 +95,7 @@ public class GameScreen extends AppCompatActivity {
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
         double d = R * c;
         //distanceMeters = d * 1000;
-        distanceMeters=215;
+        distanceMeters=15;
     }
 
     void hintButton(){
@@ -121,22 +116,13 @@ public class GameScreen extends AppCompatActivity {
                         progress.setProgress(progressScale);
                     }
                 }
+                if (distanceMeters < 20){
+                    Intent i=new Intent(GameScreen.this, CompleteScreen.class);
+                    startActivity(i);
+                }
             }
         });
     }
-
-    /*void checkEnd(){
-        if(temp>29.6) {
-            check = true;
-        } else {
-            check = false;
-        }
-
-        if(check==true){
-            Intent myIntent = new Intent(this,CompleteScreen.class);
-            startActivity(myIntent);
-        }
-    }*/
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {

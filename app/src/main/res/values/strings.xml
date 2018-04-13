@@ -5,4 +5,7 @@
     <string name="temp">Temp</string>
     <string name="background">Background</string>
     <string name="logo">Logo</string>
+    <string name="youWon">woohoo!</string>
+    <string name="endText">you\'ve found your location!</string>
+    <string name="points">points</string>
 </resources>

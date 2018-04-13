@@ -39,10 +39,11 @@
         android:contentDescription="@string/thermometer"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/thermometer_overlay"
-        tools:layout_editor_absoluteX="0dp" />
+        app:srcCompat="@drawable/thermometer_overlay" />
 
     <TextView
         android:id="@+id/Temp"
