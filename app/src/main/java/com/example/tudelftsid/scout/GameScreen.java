@@ -81,8 +81,8 @@ public class GameScreen extends AppCompatActivity {
         };
 
     void setDestination(){
-        destinationLongitude = 4.376026 ;
-        destinationLatitude = 52.003327;
+        destinationLongitude = 4.350866 ;
+        destinationLatitude = 52.007103;
     }
 
     void calculateMeters(){
@@ -103,11 +103,11 @@ public class GameScreen extends AppCompatActivity {
             public void onClick(View view) {
                 temperature.setVisibility(View.VISIBLE);
                 calculateMeters();
-                if(distanceMeters >4000){
+                if(distanceMeters >2000){
                     temperature.setText("You froze");
                 }
                 else {
-                    double a = (-1D / 80);
+                    double a = (-1D / 40);
                     temp = a * distanceMeters + 30;
                     temperature.setText(String.format("%.1f °C",temp));
                     int progressTemp = (int)temp + 20;

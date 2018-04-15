@@ -10,25 +10,30 @@
     <ProgressBar
         android:id="@+id/progressBar"
         style="@style/Widget.ProgressBar.Vertical"
-        android:layout_width="67dp"
-        android:layout_height="284dp"
-        android:layout_marginTop="92dp"
+        android:layout_width="60dp"
+        android:layout_height="260dp"
+        android:layout_marginBottom="285dp"
+        android:layout_marginTop="135dp"
         android:max="50"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/meter"
         app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="@+id/meter"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.69" />
 
     <Button
         android:id="@+id/b1"
         android:layout_width="124dp"
         android:layout_height="54dp"
         android:layout_marginBottom="28dp"
+        android:background="@drawable/mybutton"
         android:text="@string/useHint"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        />
 
     <ImageView
         android:id="@+id/meter"
