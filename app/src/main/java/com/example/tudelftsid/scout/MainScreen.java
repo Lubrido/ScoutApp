@@ -32,4 +32,9 @@ public class MainScreen extends AppCompatActivity {
                 }
         );
     }
+
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(false);
+    }
 }

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Scout</string>
     <string name="thermometer">thermometer</string>
-    <string name="useHint">Use Hint</string>
+    <string name="useHint">Use first\nhint</string>
     <string name="temp">Temp</string>
     <string name="background">Background</string>
     <string name="logo">Logo</string>
@@ -9,4 +9,5 @@
     <string name="endText">you\'ve found your location!</string>
     <string name="points">points</string>
     <string name="Find">Find</string>
+    <string name="points_left">200\npoints</string>
 </resources>
