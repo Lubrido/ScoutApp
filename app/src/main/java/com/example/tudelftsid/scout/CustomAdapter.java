@@ -48,25 +48,26 @@ class CustomAdapter extends ArrayAdapter<String>{
 
         // dynamically update the text from the array
         holder.itemText.setText(singlePlace);
+        holder.itemText.setVisibility(View.GONE);
         // dynamically update the picture
         switch (position) {
             case 0:
-                holder.photo.setImageResource(R.drawable.delft);
+                holder.photo.setImageResource(R.drawable.delftklein);
                 break;
             case 1:
-                holder.photo.setImageResource(R.drawable.nature_1);
+                holder.photo.setImageResource(R.drawable.natureklein);
                 break;
             case 2:
-                holder.photo.setImageResource(R.drawable.streetart_1);
+                holder.photo.setImageResource(R.drawable.streetklein);
                 break;
             case 3:
-                holder.photo.setImageResource(R.drawable.delft);
+                holder.photo.setImageResource(R.drawable.delftklein);
                 break;
             case 4:
-                holder.photo.setImageResource(R.drawable.nature_1);
+                holder.photo.setImageResource(R.drawable.natureklein);
                 break;
             case 5:
-                holder.photo.setImageResource(R.drawable.streetart_1);
+                holder.photo.setImageResource(R.drawable.streetklein);
                 break;
         }
         return row;
