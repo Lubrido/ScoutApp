@@ -8,4 +8,5 @@
     <string name="youWon">woohoo!</string>
     <string name="endText">you\'ve found your location!</string>
     <string name="points">points</string>
+    <string name="Find">Find</string>
 </resources>
