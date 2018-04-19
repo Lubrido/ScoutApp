@@ -21,9 +21,9 @@ public class DetailScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_screen);
 
-        itemText = (TextView) findViewById(R.id.description);
-        photo = (ImageView) findViewById(R.id.mainphoto);
-        find = (Button) findViewById(R.id.findbutton);
+        itemText = findViewById(R.id.description);
+        photo = findViewById(R.id.mainphoto);
+        find = findViewById(R.id.findbutton);
 
         Bundle bundle = getIntent().getExtras();
 
@@ -43,5 +43,3 @@ public class DetailScreen extends AppCompatActivity {
         startActivity(myIntent);
     }
 }
-
-//

@@ -16,7 +16,7 @@ public class CompleteScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complete_screen);
 
-      pointsEarned = (TextView) findViewById(R.id.pointsEarned);
+      pointsEarned = findViewById(R.id.pointsEarned);
 
      setText();
 
@@ -36,8 +36,6 @@ public class CompleteScreen extends AppCompatActivity {
     }
 
     public void startMainActivity(View view) {
-        GameScreen.clickCount=0;
-        GameScreen.point=200;
         Intent myIntent = new Intent(this,MainScreen.class);
         startActivity(myIntent);
     }

@@ -28,7 +28,7 @@ public class HomeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
 
-        background = (ImageView) findViewById(R.id.backGround);
+        background = findViewById(R.id.backGround);
 
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 

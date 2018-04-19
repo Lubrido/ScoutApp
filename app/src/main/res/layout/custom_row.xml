@@ -5,18 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="8dp"
-    android:layout_marginRight="8dp">
-
-
-
+    android:layout_marginRight="8dp"
+    >
 
     <ImageView
-        android:id="@+id/Placephoto"
+        android:id="@+id/place_photo"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/delftklein"
-
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/delft"
         />
 
     <TextView
@@ -26,10 +23,46 @@
         android:layout_marginBottom="24dp"
         android:text="Large Text"
         android:textColor="#FFFFFF"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/Placephoto"
-        app:layout_constraintEnd_toEndOf="@+id/Placephoto"
-        app:layout_constraintStart_toStartOf="@+id/Placephoto" />
+        app:layout_constraintBottom_toBottomOf="@+id/place_photo"
+        app:layout_constraintEnd_toEndOf="@+id/place_photo"
+        app:layout_constraintStart_toStartOf="@+id/place_photo"
+        />
+
+    <TextView
+        android:id="@+id/Long"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="60dp"
+        android:text="Long"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/place_photo"
+        app:layout_constraintEnd_toEndOf="@+id/place_photo"
+        app:layout_constraintStart_toStartOf="@+id/place_photo"
+        />
+
+    <TextView
+        android:id="@+id/Lat"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="40dp"
+        android:text="Lat"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/place_photo"
+        app:layout_constraintEnd_toEndOf="@+id/place_photo"
+        app:layout_constraintStart_toStartOf="@+id/place_photo"
+        />
+
+    <!--<Button-->
+        <!--android:id="@+id/find_button"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="FIND"-->
+        <!--android:onClick="find"-->
+        <!--app:layout_constraintEnd_toEndOf="@id/place_photo"-->
+        <!--app:layout_constraintStart_toStartOf="@id/place_photo"-->
+        <!--app:layout_constraintTop_toTopOf="@id/place_photo"-->
+        <!--app:layout_constraintBottom_toBottomOf="@id/place_photo"/>-->
+
 
 
 </android.support.constraint.ConstraintLayout>

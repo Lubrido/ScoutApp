@@ -16,7 +16,6 @@ public class GameScreen extends AppCompatActivity {
     private ProgressBar progress;
     private TextView temperature;
     private TextView pointsLeft;
-
     private int backPress;
     private double destinationLatitude;
     private double destinationLongitude;
@@ -26,15 +25,19 @@ public class GameScreen extends AppCompatActivity {
     public static int clickCount;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_screen);
 
-        useHintButton = (Button) findViewById(R.id.b1);
-        progress = (ProgressBar) findViewById(R.id.progressBar);
-        temperature = (TextView) findViewById(R.id.Temp);
-        pointsLeft = (TextView) findViewById(R.id.Points);
+        useHintButton = findViewById(R.id.b1);
+        progress = findViewById(R.id.progressBar);
+        temperature = findViewById(R.id.Temp);
+        pointsLeft = findViewById(R.id.Points);
+        point=200;
+        clickCount=0;
+        pointsLeft.setText(point +"\npoints");
 
         setDestination();
 
@@ -42,8 +45,50 @@ public class GameScreen extends AppCompatActivity {
     }
 
     void setDestination(){
-        destinationLongitude = 4.350708 ;
-        destinationLatitude = 52.006795;
+        int optie = 0;
+        Intent intent = getIntent();
+        optie = intent.getIntExtra("position",0);
+
+        if (optie == 0) {
+
+            destinationLongitude = 4.36805;
+            destinationLatitude = 52.010892;
+
+        } else if (optie == 1) {
+
+            destinationLongitude = 4.351703;
+            destinationLatitude = 52.007557;
+
+        } else if (optie == 2) {
+
+            destinationLongitude = 4.35199;
+            destinationLatitude = 52.007557;
+
+        } else if (optie == 3) {
+
+            destinationLongitude = 4.37591;
+            destinationLatitude = 52.002562;
+
+        } else if (optie == 4) {
+
+            destinationLongitude = 4.358468;
+            destinationLatitude = 52.001815;
+
+        } else if (optie == 5) {
+
+            destinationLongitude = 4.359976;
+            destinationLatitude = 52.006449;
+
+        } else if (optie == 6) {
+
+            destinationLongitude = 4.371078;
+            destinationLatitude = 52.003297;
+
+        } else if (optie == 7) {
+
+            destinationLongitude = 4.386121;
+            destinationLatitude = 51.986761;
+        }
     }
 
     void calculateMeters(){
